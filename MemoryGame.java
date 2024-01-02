@@ -3,20 +3,8 @@ package MatchUpGame;
 import java.util.*;
 
 public class MemoryGame 
-{
-
-	/*
-	 * public static void printBoard(char board[][]) {
-	 * System.out.println("      0    1    2    3    4    5");
-	 * System.out.print("   -------------------------------"); System.out.println();
-	 * for(int i = 0; i < 6; i++) { for(int j = 0; j < 6; j++) { if(j == 0)
-	 * System.out.print(" "+i+" |");
-	 * 
-	 * System.out.print("  "+board[i][j]+" |"); } System.out.println();
-	 * System.out.print("   -------------------------------"); System.out.println();
-	 * } }
-	 */
-	  
+{	
+	//place all card in the cell
 	public static void placeElement(char element,char[][] board)
 	{
 		Random random = new Random();
@@ -31,7 +19,8 @@ public class MemoryGame
 	    
 	    board[row][col] = element;
 	}
-	
+
+	//Initially creating the board
 	public static void createBoard(char board[][])
 	{
 		char element = '!';
@@ -50,7 +39,8 @@ public class MemoryGame
 		}		
 	}
 	
-	 public static boolean checkIfOpen(List<List<Integer>> opened,int i,int j)
+	// check whether the player already opened the card
+	public static boolean checkIfOpen(List<List<Integer>> opened,int i,int j)
 	  {
 		  for (List<Integer> innerList : opened)
 		  {
@@ -59,7 +49,8 @@ public class MemoryGame
 	      }
 		  return false;
 	  }
-	 
+
+	//print the board 
 	  public static void printOpenedCell(char board[][], List<List<Integer>> opened, List<List<Integer>> openedButWrong)
 	  {
 		  System.out.println("      0    1    2    3    4    5");
@@ -86,7 +77,8 @@ public class MemoryGame
 				System.out.println();
 			}
 	  }
-	  
+
+	//display message on successful flips
 	  public static String displayMessage()
 	  {
 		  Random random = new Random();
@@ -120,7 +112,8 @@ public class MemoryGame
 		  }
 		  return msg;
 	  }
-	  
+
+	//Maintain the flow of the game, such as getting input, checking conditions for similarities 
 	  public static void playGame(char[][] board)
 	  {
 		  Scanner sc = new Scanner(System.in);
@@ -194,7 +187,8 @@ public class MemoryGame
 		 
 		  System.out.println("Congratulations! you cracked it in "+cntOfMoves+" moves...");
 	  }
-	  
+
+	//starting point of the game
 	public static void main(String args[])
 	{
 		
