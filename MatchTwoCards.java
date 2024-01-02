@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MatchTwoCards 
 {
-
+	//Printing the board
 	  public static void printBoard(char board[][])
 	  {
 		  System.out.println("      0    1    2    3    4    5    6    7    8    9");
@@ -24,7 +24,8 @@ public class MatchTwoCards
 				System.out.println();
 			}
 	  }
-	  
+
+	//placing element on the cells i.e filling the board
 	public static void placeElement(char element,char[][] board)
 	{
 		Random random = new Random();
@@ -39,7 +40,8 @@ public class MatchTwoCards
 	    
 	    board[row][col] = element;
 	}
-	
+
+	//creaing board, initializing which element to place
 	public static void createBoard(char board[][])
 	{
 		char element = '0';
@@ -55,7 +57,8 @@ public class MatchTwoCards
 		    filled++;
 		}		
 	}
-	
+
+	//checking whether the particular cell is already opened by the user or not 
 	 public static boolean checkIfOpen(List<List<Integer>> opened,int i,int j)
 	  {
 		  for (List<Integer> innerList : opened)
@@ -65,7 +68,8 @@ public class MatchTwoCards
 	      }
 		  return false;
 	  }
-	 
+
+	//printing board 
 	  public static void printOpenedCell(char board[][], List<List<Integer>> opened, List<List<Integer>> openedButWrong)
 	  {
 		  System.out.println("      0    1    2    3    4    5    6    7    8    9");
@@ -92,7 +96,8 @@ public class MatchTwoCards
 				System.out.println();
 			}
 	  }
-	  
+
+	//display random congrats message on user successfully found the match
 	  public static String displayMessage()
 	  {
 		  Random random = new Random();
@@ -126,7 +131,8 @@ public class MatchTwoCards
 		  }
 		  return msg;
 	  }
-	  
+
+	//Maintain the flow of the game
 	  public static void playGame(char[][] board)
 	  {
 		  Scanner sc = new Scanner(System.in);
@@ -193,7 +199,8 @@ public class MatchTwoCards
 		 
 		  System.out.println("Congratulations! you cracked it in "+cntOfMoves);
 	  }
-	  
+
+	
 	public static void main(String args[])
 	{
 		
